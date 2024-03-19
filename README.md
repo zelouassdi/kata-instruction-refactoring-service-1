@@ -14,20 +14,25 @@ Your mission is to **refactor the whole codebase to make it cleaner, and thus mo
 
 The objectives is to improve this codebase. This exercise **should not last longer than 1,5 hour**. It can be too short if you want to fix everything, but you may take add extra effort and it's up to you.
 
+## Pre-requisites
+
+- JDK 17
+
 ## How to run the code
 
 You can start the application:
 
 ```
-mvn spring-boot:run
+cd excelservice-1.0
+./gradlew bootRun
 ```
 
-This will expose a few routes [at localhost](http://localhost:8080/`).
+This will expose a few routes [at localhost](http://localhost:8080/api). You may try this [hello world](http://localhost:8080/api/hello).
 
 You can launch the tests with:
 
 ```
-mvn test
+./gradlew test
 ```
 
 ## Deliverables
