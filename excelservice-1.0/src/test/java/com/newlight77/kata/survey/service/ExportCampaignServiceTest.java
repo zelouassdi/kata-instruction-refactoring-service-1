@@ -137,5 +137,7 @@ public class ExportCampaignServiceTest {
         Row surveysHeaderRow = sheet.getRow(8);
         Assertions.assertThat(surveysHeaderRow).isNotNull();
 
+        System.out.println("Tests are ok");
+
     }
 }
