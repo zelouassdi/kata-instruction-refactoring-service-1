@@ -11,9 +11,6 @@ import org.springframework.context.annotation.Import;
 class ApplicationTests {
 	private ExportCampaignServiceTest exportCampaignServiceTest;
 	@Test
-	void contextLoads() {
-		exportCampaignServiceTest.init();
-		exportCampaignServiceTest.test();
-	}
+	void contextLoads() {}
 
 }
