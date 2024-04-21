@@ -16,30 +16,11 @@ import java.time.format.DateTimeFormatter;
 
 @Component
 public class ExportCampaignService {
-
-  private final CampaignClient campaignWebService;
   private final MailService mailService;
   private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
   
-  public ExportCampaignService(final CampaignClient campaignWebService, final MailService mailService) {
-    this.campaignWebService = campaignWebService;
+  public ExportCampaignService(final MailService mailService) {
     this.mailService = mailService;
-  }
-
-  public void creerSurvey(final Survey survey) {
-    campaignWebService.createSurvey(survey);
-  }
-
-  public Survey getSurvey(final String id) {
-    return campaignWebService.getSurvey(id);
-  }
-
-  public void createCampaign(final Campaign campaign) {
-    campaignWebService.createCampaign(campaign);
-  }
-
-  public Campaign getCampaign(final String id) {
-    return campaignWebService.getCampaign(id);
   }
 
   public void sendResults(final Campaign campaign, final Survey survey) {
@@ -180,5 +161,4 @@ public class ExportCampaignService {
       }
     }
   }
-
 }

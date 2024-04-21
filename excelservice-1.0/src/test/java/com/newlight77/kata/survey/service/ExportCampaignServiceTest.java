@@ -34,7 +34,7 @@ public class ExportCampaignServiceTest {
     public void init() {
         MockitoAnnotations.initMocks(this);
 
-        service = new ExportCampaignService(campaignClientMock, mailServiceMock);
+        service = new ExportCampaignService(mailServiceMock);
         service = Mockito.spy(service);
     }
 
