@@ -11,6 +11,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class CampaignClient {
 
     private final WebClient webClient;
+    private final String surveysUrl = "/surveys";
+    private final String campaignsUrl = "/campaigns";
 
     public CampaignClient(@Value("${external.url}") final String externalUrl) {
         webClient = WebClient.builder()
@@ -21,27 +23,27 @@ public class CampaignClient {
 
     public void createSurvey(final Survey survey) {
         webClient.post()
-                .uri("/surveys")
+                .uri(surveysUrl)
                 .bodyValue(survey)
                 .retrieve();
     }
 
     public Survey getSurvey(final String id) {
         return webClient.get()
-                .uri("/surveys/" + id)
+                .uri(surveysUrl + id)
                 .retrieve()
                 .bodyToMono(Survey.class).block();
     }
 
     public void createCampaign(final Campaign campaign) {
         webClient.post()
-                .uri("/campaigns")
+                .uri(campaignsUrl)
                 .bodyValue(campaign);
     }
 
     public Campaign getCampaign(final String id) {
         return webClient.get()
-                .uri("/campaigns/" + id)
+                .uri(campaignsUrl + id)
                 .retrieve()
                 .bodyToMono(Campaign.class).block();
     }
